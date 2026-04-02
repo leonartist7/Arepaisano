@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>AREPAISANO — Colombian Tastiness | Calgary</title>
+  <meta name="description" content="Arepas artesanales colombianas en Calgary, AB. Hechas con maíz 100% natural por Martha Bejarano. Gluten Free · Fat Free · Vegan. Pickup disponible Lunes–Sábado.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AREPAISANO — Colombian Tastiness | Calgary">
+  <meta property="og:description" content="Arepas artesanales colombianas en Calgary, AB. Maíz 100% natural. Gluten Free · Fat Free · Vegan.">
+  <meta property="og:image" content="images/hero-bg.png">
+
+  <!-- Performance: preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Accessibility: skip to main content -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ── NAV ── -->
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-brand">AREPAISANO</a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#nosotros">Nuestra Historia</a></li>
+      <li><a href="#como">Cómo Ordenar</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <button class="cart-btn" onclick="toggleCart()" aria-label="Ver mi pedido" aria-expanded="false">
+      🛒 Mi Pedido
+      <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+    </button>
+  </nav>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main id="main">
+
+    <!-- ── HERO ── -->
+    <section id="hero" aria-label="Hero">
+      <img
+        class="hero-bg-img"
+        src="https://res.cloudinary.com/dgio9uutc/image/upload/v1774936171/freepik_from-this-image-lets-remaster-this-for-a-studio-light-and-professional-looking-render-this-will-be-the-big-image-for-the-hero-of-my-website-so-make-it-look-good-and-only-the-items-no-back_0001_1_mw9p8w.png"
+        alt="Arepas artesanales de Arepaisano"
+        width="1920"
+        height="1080"
+        loading="eager"
+        fetchpriority="high"
+      >
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-bg-pattern" aria-hidden="true"></div>
+
+      <button class="hero-variant-btn" id="heroVariantBtn" onclick="switchHeroVariant()" aria-label="Ver variación del hero">V2</button>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">Calgary, Alberta · Hecho con amor</div>
+          <h1 class="hero-title">
+            El sabor de<br><span>Colombia</span><br>en tu mesa
+          </h1>
+          <p class="hero-subtitle">
+            Arepas artesanales hechas con maíz 100% natural.<br>
+            Congeladas frescas. Listas en 15 minutos. Pickup en Calgary.
+          </p>
+          <div class="hero-ctas">
+            <a href="#productos" class="btn-primary">Ver Productos</a>
+            <a href="#contacto" class="btn-secondary">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MARQUEE ── -->
+    <div id="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item highlight">Gluten Free</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Fat Free</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">100% Natural Corn</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Tasty</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Corn Arepas</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Cheese Arepas</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Green Life</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Carrot Life</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Seeds Life</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Almond Life</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Mini Corn</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Colombian Tastiness</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Calgary, AB</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Artisan Made</span>
+        <span class="marquee-dot"></span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee-item highlight">Gluten Free</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Fat Free</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">100% Natural Corn</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Tasty</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Corn Arepas</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Cheese Arepas</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Green Life</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Carrot Life</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Seeds Life</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Almond Life</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Mini Corn</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Colombian Tastiness</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Calgary, AB</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-item">Artisan Made</span>
+        <span class="marquee-dot"></span>
+      </div>
+    </div>
+
+    <!-- ── WHY US ── -->
+    <section id="porque" aria-labelledby="porque-title">
+      <div class="section-header">
+        <span class="section-label">Por Qué Elegirnos</span>
+        <h2 class="section-title" id="porque-title">Calidad que <span>se siente</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-icon" aria-hidden="true">🌽</span>
+          <div class="why-title">100% Maíz Natural</div>
+          <p class="why-text">Sin harinas añadidas. Sin conservantes artificiales. Solo maíz, agua y amor como en Colombia.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon" aria-hidden="true">❄️</span>
+          <div class="why-title">Congeladas Frescas</div>
+          <p class="why-text">Las congelamos recién hechas para que lleguen a tu mesa con todo el sabor intacto. Listas en 5 minutos.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon" aria-hidden="true">🚚</span>
+          <div class="why-title">Pickup en Calgary</div>
+          <p class="why-text">Coordina tu pickup directamente por WhatsApp. Listo en 15 minutos. Lunes a Sábado · 8am–3pm.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BANNER TRANSITION ── -->
+    <div class="banner-transition" aria-hidden="true">
+      <img src="https://res.cloudinary.com/dgio9uutc/image/upload/v1775089250/Taste_a_bite_of_Colombia_here_1_rmdbic.png" alt="" width="1200" height="500" loading="lazy">
+    </div>
+
+    <!-- ── ABOUT ── -->
+    <section id="nosotros" aria-labelledby="nosotros-title">
+      <div class="about-bg" aria-hidden="true"></div>
+      <div class="about-content">
+        <div class="about-visual">
+          <div class="about-photo">
+            <img
+              src="images/about-martha.png"
+              alt="Martha Bejarano — fundadora de Arepaisano"
+              width="280"
+              height="320"
+              loading="lazy"
+            >
+          </div>
+          <div class="about-caption">100% Colombiana</div>
+          <div class="about-flag" aria-label="Bandera de Colombia">
+            <div class="flag-stripe" style="background:#FCD116; width:60px;" aria-hidden="true"></div>
+            <div class="flag-stripe" style="background:#003087; width:30px;" aria-hidden="true"></div>
+            <div class="flag-stripe" style="background:#CE1126; width:30px;" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-label">Nuestra Historia</span>
+          <h2 class="about-title" id="nosotros-title">
+            Martha <span>Bejarano</span><br>y su sueño colombiano
+          </h2>
+          <p class="about-story">
+            Martha Bejarano llegó de Bogotá a Calgary hace casi 18 años. Fue una de las primeras personas en traer la arepa colombiana artesanal a esta ciudad — cuando nadie más la hacía. Lo que empezó con 5 paquetes en Unimarket se convirtió en una marca que hoy distribuye a tiendas latinas en Calgary y Edmonton.
+          </p>
+          <p class="about-story">
+            Cada arepa la hace con maíz 100% natural, sin harinas añadidas, sin atajos. Porque para Martha, llevar el sabor de Colombia a la mesa de las familias no es un negocio — es una misión.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">+10</span>
+              <span class="stat-label">Años en Calgary</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">🇨🇴</span>
+              <span class="stat-label">Bogotá · Colombia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRODUCTS ── -->
+    <section id="productos" aria-labelledby="productos-title">
+      <div class="section-header">
+        <span class="section-label">La Tienda</span>
+        <h2 class="section-title" id="productos-title">Nuestras <span>Arepas</span></h2>
+        <p class="section-sub">Selecciona tus favoritas y te contactamos por WhatsApp para coordinar la entrega</p>
+      </div>
+      <div class="products-grid" id="productsGrid" aria-label="Productos disponibles">
+        <!-- Rendered by js/products.js -->
+      </div>
+    </section>
+
+    <!-- ── HOW TO ORDER ── -->
+    <section id="como" aria-labelledby="como-title">
+      <div class="como-bg" aria-hidden="true"></div>
+      <div class="section-header" style="position:relative;z-index:2;">
+        <span class="section-label" style="color:var(--blue);border-color:var(--blue);">Cómo Funciona</span>
+        <h2 class="section-title" id="como-title" style="color:var(--blue);">
+          Ordenar es <span style="color:var(--red);">muy fácil</span>
+        </h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num" aria-hidden="true">1</div>
+          <div class="step-title">Elige tus Arepas</div>
+          <p class="step-text">Selecciona los productos que quieres y agrégalos a tu pedido</p>
+        </div>
+        <div class="step">
+          <div class="step-num" aria-hidden="true">2</div>
+          <div class="step-title">Revisa tu Pedido</div>
+          <p class="step-text">Confirma las cantidades y el total en tu carrito</p>
+        </div>
+        <div class="step">
+          <div class="step-num" aria-hidden="true">3</div>
+          <div class="step-title">Envía por WhatsApp</div>
+          <p class="step-text">Martha confirma, coordina la entrega y ¡listo!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section id="testimonios" aria-labelledby="testimonios-title">
+      <div class="section-header">
+        <span class="section-label">Lo que dicen</span>
+        <h2 class="section-title" id="testimonios-title">Clientes que <span>nos aman</span></h2>
+      </div>
+      <div class="testi-grid">
+        <article class="testi-card">
+          <span class="testi-quote-mark" aria-hidden="true">"</span>
+          <div class="testi-stars" aria-label="5 estrellas">★★★★★</div>
+          <p class="testi-text">Gracias de todo corazón! Me puse a pensar y me di cuenta de que soy tu cliente fiel desde hace más de 16 años, y no es casualidad. Cada vez que pruebo una de tus arepas, siento que me traslado de inmediato a mi Colombia natal; es como tener un pedacito de nuestra tierra aquí mismo.</p>
+          <img class="testi-photo" src="https://res.cloudinary.com/dgio9uutc/image/upload/v1775005207/freepik_closeup-macro-photograph-of-a-freshly-made-arepa-steam-rising-gently-from-the-warm-arepa-cinematic-food-photography-dramatic-backlighting-ultrarealistic-no-text_0002_gagctf.png" alt="Arepa artesanal recién hecha" loading="lazy">
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">M</div>
+            <div>
+              <div class="testi-name">María C.</div>
+              <div class="testi-city">Calgary, AB 🇨🇴</div>
+            </div>
+          </div>
+        </article>
+        <article class="testi-card">
+          <span class="testi-quote-mark" aria-hidden="true">"</span>
+          <div class="testi-stars" aria-label="5 estrellas">★★★★★</div>
+          <p class="testi-text">Todos los productos que vendes son maravillosos y se nota el amor que le pones a cada cosa. Gracias por mantener vivo ese sabor que tanto nos hace falta y por tu excelente atención durante tantos años. ¡Eres una bendición!</p>
+          <img class="testi-photo" src="https://res.cloudinary.com/dgio9uutc/image/upload/v1775092962/WhatsApp_Image_2026-03-09_at_20.54.15_t7wh16.jpg" alt="Arepas Arepaisano" loading="lazy">
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">R</div>
+            <div>
+              <div class="testi-name">Roberto A.</div>
+              <div class="testi-city">Calgary, AB 🇨🇴</div>
+            </div>
+          </div>
+        </article>
+        <article class="testi-card">
+          <span class="testi-quote-mark" aria-hidden="true">"</span>
+          <div class="testi-stars" aria-label="5 estrellas">★★★★★</div>
+          <p class="testi-text">Arepaisano serves incredible, high-quality handmade Colombian arepas that truly bring authentic, homemade flavor to the table. Customers rave about the unique "sabor" and fresh ingredients, showcasing passion for making delicious, authentic Latin goodies that are absolutely unforgettable.</p>
+          <img class="testi-photo" src="https://res.cloudinary.com/dgio9uutc/image/upload/v1775092963/WhatsApp_Image_2026-03-09_at_20.53.54_fofjdm.jpg" alt="Arepas Arepaisano" loading="lazy">
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">★</div>
+            <div>
+              <div class="testi-name">Featured Review</div>
+              <div class="testi-city">Calgary, AB</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contacto" aria-labelledby="contacto-title">
+      <div class="contact-bg" aria-hidden="true"></div>
+      <div class="contact-content">
+        <h2 class="contact-title" id="contacto-title">¿Lista para <span>ordenar</span>?</h2>
+        <p class="contact-sub">Escríbenos directamente por WhatsApp. Martha responde personalmente.</p>
+        <div class="contact-ctas">
+          <a href="https://wa.me/14033975089" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            💬 Escribir por WhatsApp
+          </a>
+          <a href="#productos" class="btn-primary">Ver Productos</a>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">📍 4099 Ogden Rd SE, Calgary, AB T2G 4P9</div>
+          <div class="contact-item">📱 <a href="tel:+14033975089">(403) 397-5089</a></div>
+          <div class="contact-item">✉️ <a href="mailto:arepaisanotraditionalfood@gmail.com">arepaisanotraditionalfood@gmail.com</a></div>
+          <div class="contact-item">🕗 Lunes a Sábado · 8am – 3pm</div>
+          <div class="contact-item">🇨🇴 Colombian Tastiness</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-brand">AREPAISANO</div>
+    <div class="footer-copy">
+      © 2026 Arepaisano by Martha Bejarano · Calgary, AB ·
+      <a href="mailto:arepaisanotraditionalfood@gmail.com">arepaisanotraditionalfood@gmail.com</a>
+    </div>
+  </footer>
+
+  <!-- ── CART OVERLAY ── -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()" aria-hidden="true"></div>
+
+  <!-- ── CART DRAWER ── -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Mi pedido" aria-hidden="true">
+    <div class="cart-header">
+      <h3>🛒 Mi Pedido</h3>
+      <button class="cart-close" onclick="toggleCart()" aria-label="Cerrar pedido">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <span class="empty-icon">🫓</span>
+        <p>Tu pedido está vacío.<br>¡Agrega unas arepas!</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total estimado:</span>
+        <span class="cart-total-price" id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn-checkout" onclick="sendToWhatsApp()">
+        💬 Enviar Pedido por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Scripts (deferred for performance) -->
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</body>
+</html>
