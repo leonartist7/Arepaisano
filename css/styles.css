@@ -5,18 +5,18 @@
 
 /* ── CSS VARIABLES ── */
 :root {
-  --yellow: #FCD116;
-  --yellow-dark: #E8B800;
-  --red: #CE1126;
-  --red-dark: #A50D1E;
-  --blue: #003087;
-  --blue-light: #1a4fa8;
-  --turquoise: #00A99D;
-  --turquoise-dark: #007A72;
-  --turquoise-light: #33C4BA;
-  --cream: #FFF8EC;
-  --brown: #4A2C0A;
-  --white: #ffffff;
+  --yellow: #E9B942;
+  --yellow-dark: #CC9826;
+  --red: #C65A2E;
+  --red-dark: #9C4020;
+  --blue: #2E1C12;
+  --blue-light: #493024;
+  --turquoise: #64704B;
+  --turquoise-dark: #4C5937;
+  --turquoise-light: #83906B;
+  --cream: #F5E9D4;
+  --brown: #2E1C12;
+  --white: #FFF9EE;
   --nav-height: 64px;
 }
 
@@ -76,8 +76,8 @@ nav {
 }
 
 .nav-brand {
-  font-family: 'Rockwell', 'Rockwell Nova', Georgia, serif;
-  font-weight: bold;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 900;
   color: var(--blue);
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -159,7 +159,7 @@ nav {
 
 /* ── HERO ── */
 #hero {
-  min-height: 75vh;
+  min-height: min(780px, 88vh);
   padding-top: var(--nav-height);
   position: relative;
   display: flex;
@@ -182,10 +182,11 @@ nav {
   inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(0,48,135,0.92) 0%,
-    rgba(0,48,135,0.78) 38%,
-    rgba(0,48,135,0.3) 62%,
-    rgba(0,0,0,0) 80%
+    rgba(46,28,18,0.96) 0%,
+    rgba(46,28,18,0.86) 36%,
+    rgba(46,28,18,0.34) 58%,
+    rgba(46,28,18,0.04) 76%,
+    rgba(46,28,18,0) 100%
   );
   z-index: 1;
 }
@@ -193,7 +194,7 @@ nav {
 .hero-bg-pattern {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 8% 25%, rgba(0,169,157,0.28) 0%, transparent 45%);
+  background: radial-gradient(circle at 7% 80%, rgba(198,90,46,0.28) 0%, transparent 45%);
   z-index: 1;
 }
 
@@ -205,7 +206,7 @@ nav {
   align-items: center;
   padding: 4rem 6% 3rem;
   width: 100%;
-  max-width: 700px;
+  max-width: 680px;
 }
 
 .hero-text { width: 100%; }
@@ -228,9 +229,9 @@ nav {
 }
 
 h1.hero-title {
-  font-family: 'Rockwell', 'Rockwell Nova', Georgia, serif;
-  font-weight: bold;
-  font-size: clamp(2.6rem, 5.5vw, 5.2rem);
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(2.75rem, 5.4vw, 5.4rem);
   color: var(--white);
   line-height: 1.02;
   margin-bottom: 1.2rem;
@@ -240,8 +241,8 @@ h1.hero-title {
 h1.hero-title span { color: var(--yellow); }
 
 .hero-subtitle {
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.82);
+  font-size: 1.1rem;
+  color: rgba(255,249,238,0.86);
   line-height: 1.65;
   margin-bottom: 2.5rem;
   font-weight: 600;
@@ -286,7 +287,7 @@ h1.hero-title span { color: var(--yellow); }
   font-weight: 800;
   font-size: 1rem;
   text-decoration: none;
-  border: 2px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,249,238,0.6);
   cursor: pointer;
   transition: all 0.25s;
   display: inline-flex;
@@ -294,8 +295,9 @@ h1.hero-title span { color: var(--yellow); }
   gap: 8px;
 }
 .btn-secondary:hover {
-  border-color: var(--white);
-  background: rgba(255,255,255,0.1);
+  border-color: var(--yellow);
+  color: var(--yellow);
+  background: rgba(255,249,238,0.1);
 }
 
 .hero-phone {
@@ -324,27 +326,26 @@ h1.hero-title span { color: var(--yellow); }
 #marquee {
   position: relative;
   z-index: 3;
-  background: var(--blue);
+  background: var(--yellow);
   overflow: hidden;
-  border-top: 3px solid var(--yellow);
+  border-top: 3px solid var(--red);
   flex-shrink: 0;
 }
 
 .marquee-track {
   display: flex;
-  width: max-content;
-  animation: marqueeScroll 28s linear infinite;
-  padding: 13px 0;
+  width: 100%;
+  justify-content: center;
+  padding: 13px 5%;
 }
-.marquee-track:hover { animation-play-state: paused; }
 
 .marquee-item {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 0 28px;
-  color: var(--white);
-  font-family: 'Rockwell', 'Rockwell Nova', Georgia, serif;
+  color: var(--blue);
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 0.82rem;
   letter-spacing: 2px;
@@ -355,10 +356,66 @@ h1.hero-title span { color: var(--yellow); }
 .marquee-dot {
   width: 5px; height: 5px;
   border-radius: 50%;
-  background: var(--yellow);
+  background: var(--red);
   flex-shrink: 0;
 }
-.marquee-item.highlight { color: var(--yellow); }
+.marquee-item.highlight { color: var(--red-dark); }
+
+/* ── BRAND MOMENTS ── */
+#momentos {
+  padding: 6rem 5%;
+  background: #2E1C12;
+  color: var(--white);
+}
+body.cart-is-open { overflow: hidden; }
+
+.momentos-intro {
+  max-width: 760px;
+  margin: 0 auto 2.75rem;
+  text-align: center;
+}
+.momentos-intro .section-label { color: var(--yellow); border-color: rgba(233,185,66,0.7); }
+.momentos-intro .section-title { color: var(--white); }
+.momentos-intro .section-title span { color: var(--yellow); }
+.momentos-intro p { color: rgba(255,249,238,0.74); font-size: 1.05rem; line-height: 1.65; margin-top: 0.9rem; }
+
+.moments-grid {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.moment-card {
+  min-height: 300px;
+  border-radius: 18px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  background-color: #493024;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+}
+.moment-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(46,28,18,0.96) 2%, rgba(46,28,18,0.12) 78%);
+  z-index: -1;
+}
+.moment-card--kitchen { background-image: url('../images/hero-arepaisano-v2.png'); background-position: 75% center; }
+.moment-card--coffee { background-image: url('https://res.cloudinary.com/dgio9uutc/image/upload/v1775005207/freepik_closeup-macro-photograph-of-a-freshly-made-arepa-steam-rising-gently-from-the-warm-arepa-cinematic-food-photography-dramatic-backlighting-ultrarealistic-no-text_0002_gagctf.png'); }
+.moment-card--events { background-image: url('https://res.cloudinary.com/dgio9uutc/image/upload/v1775092962/WhatsApp_Image_2026-03-09_at_20.54.15_t7wh16.jpg'); }
+.moment-number { color: var(--yellow); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.14em; margin-bottom: 0.65rem; }
+.moment-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.55rem; line-height: 1.1; margin-bottom: 0.55rem; }
+.moment-card p { color: rgba(255,249,238,0.84); line-height: 1.5; font-weight: 700; max-width: 30ch; }
+.moments-note { max-width: 1160px; margin: 1.15rem auto 0; color: rgba(255,249,238,0.58); font-size: 0.82rem; text-align: right; }
 
 /* ── SECTION SHARED ── */
 .section-header {
@@ -382,8 +439,8 @@ h1.hero-title span { color: var(--yellow); }
 }
 
 h2.section-title {
-  font-family: 'Rockwell', 'Rockwell Nova', Georgia, serif;
-  font-weight: bold;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 900;
   font-size: clamp(2rem, 4vw, 3.2rem);
   color: var(--blue);
   line-height: 1.1;
@@ -531,7 +588,7 @@ h2.section-title span { color: var(--red); }
 }
 
 .product-price {
-  font-family: 'Abril Fatface', serif;
+  font-family: 'Fraunces', Georgia, serif;
   font-size: 1.4rem;
   color: var(--red);
 }
@@ -637,8 +694,8 @@ h2.section-title span { color: var(--red); }
 .about-text .section-label { display: inline-block; margin-bottom: 1rem; }
 
 h2.about-title {
-  font-family: 'Rockwell', 'Rockwell Nova', Georgia, serif;
-  font-weight: bold;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 900;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   color: var(--blue);
   line-height: 1.1;
@@ -658,7 +715,7 @@ h2.about-title span { color: var(--red); }
 
 .stat { text-align: center; }
 .stat-num {
-  font-family: 'Abril Fatface', serif;
+  font-family: 'Fraunces', Georgia, serif;
   font-size: 2.2rem;
   color: var(--blue);
   display: block;
@@ -762,7 +819,7 @@ h2.about-title span { color: var(--red); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Abril Fatface', serif;
+  font-family: 'Fraunces', Georgia, serif;
   font-size: 1.8rem;
   margin: 0 auto 1.25rem;
   box-shadow: 0 8px 24px rgba(0,48,135,0.3);
@@ -897,8 +954,8 @@ h2.about-title span { color: var(--red); }
 .contact-content { position: relative; z-index: 2; }
 
 h2.contact-title {
-  font-family: 'Rockwell', 'Rockwell Nova', Georgia, serif;
-  font-weight: bold;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 900;
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--white);
   margin-bottom: 0.75rem;
@@ -973,8 +1030,8 @@ footer {
 }
 
 .footer-brand {
-  font-family: 'Rockwell', 'Rockwell Nova', Georgia, serif;
-  font-weight: bold;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 900;
   color: var(--blue);
   font-size: 1.3rem;
   letter-spacing: 2px;
@@ -1025,7 +1082,7 @@ footer {
   justify-content: space-between;
 }
 .cart-header h3 {
-  font-family: 'Abril Fatface', serif;
+  font-family: 'Fraunces', Georgia, serif;
   font-size: 1.3rem;
   color: var(--yellow);
 }
@@ -1062,7 +1119,7 @@ footer {
 .cart-item-icon { font-size: 2.2rem; }
 .cart-item-info { flex: 1; }
 .cart-item-name { font-weight: 800; font-size: 0.9rem; color: var(--blue); }
-.cart-item-price { font-family: 'Abril Fatface', serif; color: var(--red); font-size: 1rem; }
+.cart-item-price { font-family: 'Fraunces', Georgia, serif; color: var(--red); font-size: 1rem; }
 
 .cart-item-controls { display: flex; align-items: center; gap: 8px; }
 .qty-btn {
@@ -1097,7 +1154,7 @@ footer {
   border-radius: 12px;
 }
 .cart-total-label { font-weight: 800; color: var(--brown); }
-.cart-total-price { font-family: 'Abril Fatface', serif; font-size: 1.5rem; color: var(--blue); }
+.cart-total-price { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; color: var(--blue); }
 
 .btn-checkout {
   width: 100%;
@@ -1132,47 +1189,6 @@ footer {
   to { transform: translateX(-50%); }
 }
 
-/* ── HERO VARIANT TOGGLE BUTTON ── */
-.hero-variant-btn {
-  position: absolute;
-  top: calc(var(--nav-height) + 1rem); right: 1.5rem;
-  z-index: 10;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.4);
-  color: white;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 0.7rem;
-  letter-spacing: 1px;
-  padding: 4px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.hero-variant-btn:hover { background: rgba(255,255,255,0.25); }
-
-/* ── HERO V2 OVERRIDES (light background) ── */
-#hero.hero--v2 .hero-overlay { opacity: 0; }
-#hero.hero--v2 .hero-bg-pattern { opacity: 0; }
-#hero.hero--v2 .hero-bg-img { object-position: center center; }
-#hero.hero--v2 h1.hero-title { color: var(--blue); }
-#hero.hero--v2 h1.hero-title span { color: var(--red); }
-#hero.hero--v2 .hero-subtitle { color: rgba(0,48,135,0.7); }
-#hero.hero--v2 .hero-badge {
-  background: rgba(0,48,135,0.08);
-  border-color: rgba(0,48,135,0.3);
-  color: var(--blue);
-}
-#hero.hero--v2 .btn-secondary {
-  border-color: var(--blue);
-  color: var(--blue);
-}
-#hero.hero--v2 .btn-secondary:hover { background: rgba(0,48,135,0.08); }
-#hero.hero--v2 .hero-variant-btn {
-  background: rgba(0,48,135,0.1);
-  border-color: rgba(0,48,135,0.3);
-  color: var(--blue);
-}
 
 /* ============================================================
    RESPONSIVE — Tablet (640px – 1023px)
@@ -1206,6 +1222,8 @@ footer {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-card:nth-child(2) { margin-top: 0; }
+  .moments-grid { grid-template-columns: repeat(2, 1fr); }
+  .moment-card--kitchen { grid-column: span 2; }
 
   .steps-grid {
     grid-template-columns: 1fr;
@@ -1227,9 +1245,9 @@ footer {
   .hero-overlay {
     background: linear-gradient(
       105deg,
-      rgba(0,48,135,0.97) 0%,
-      rgba(0,48,135,0.9) 50%,
-      rgba(0,48,135,0.6) 100%
+      rgba(46,28,18,0.95) 0%,
+      rgba(46,28,18,0.86) 56%,
+      rgba(46,28,18,0.47) 100%
     );
   }
 
@@ -1242,6 +1260,10 @@ footer {
 
   .testi-grid { grid-template-columns: 1fr; }
   .testi-card:nth-child(2) { margin-top: 0; }
+  #momentos { padding: 4.5rem 5%; }
+  .moments-grid { grid-template-columns: 1fr; }
+  .moment-card, .moment-card--kitchen { grid-column: auto; min-height: 250px; }
+  .moments-note { text-align: left; }
 
   footer { flex-direction: column; text-align: center; align-items: center; }
 }
