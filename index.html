@@ -6,18 +6,18 @@
 
   <!-- SEO -->
   <title>AREPAISANO — Colombian Tastiness | Calgary</title>
-  <meta name="description" content="Arepas artesanales colombianas en Calgary, AB. Hechas con maíz 100% natural por Martha Bejarano. Gluten Free · Fat Free · Vegan. Pickup disponible Lunes–Sábado.">
+  <meta name="description" content="Arepas artesanales colombianas en Calgary, AB. Hechas a mano por Martha Bejarano. Pickup disponible de lunes a sábado.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AREPAISANO — Colombian Tastiness | Calgary">
-  <meta property="og:description" content="Arepas artesanales colombianas en Calgary, AB. Maíz 100% natural. Gluten Free · Fat Free · Vegan.">
-  <meta property="og:image" content="images/hero-bg.png">
+  <meta property="og:description" content="Arepas artesanales colombianas en Calgary, AB. Hechas a mano con tradición familiar.">
+  <meta property="og:image" content="images/hero-arepaisano-v2.png">
 
   <!-- Performance: preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -34,6 +34,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#productos">Productos</a></li>
       <li><a href="#nosotros">Nuestra Historia</a></li>
+      <li><a href="#momentos">Momentos</a></li>
       <li><a href="#como">Cómo Ordenar</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -57,8 +58,8 @@
     <section id="hero" aria-label="Hero">
       <img
         class="hero-bg-img"
-        src="https://res.cloudinary.com/dgio9uutc/image/upload/v1774936171/freepik_from-this-image-lets-remaster-this-for-a-studio-light-and-professional-looking-render-this-will-be-the-big-image-for-the-hero-of-my-website-so-make-it-look-good-and-only-the-items-no-back_0001_1_mw9p8w.png"
-        alt="Arepas artesanales de Arepaisano"
+        src="images/hero-arepaisano-v2.png"
+        alt="Arepas artesanales de maíz con queso y café colombiano"
         width="1920"
         height="1080"
         loading="eager"
@@ -67,88 +68,60 @@
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-bg-pattern" aria-hidden="true"></div>
 
-      <button class="hero-variant-btn" id="heroVariantBtn" onclick="switchHeroVariant()" aria-label="Ver variación del hero">V2</button>
-
       <div class="hero-content">
         <div class="hero-text">
-          <div class="hero-badge">Calgary, Alberta · Hecho con amor</div>
+          <div class="hero-badge">Calgary, Alberta · Hecho a mano</div>
           <h1 class="hero-title">
-            El sabor de<br><span>Colombia</span><br>en tu mesa
+            Un pedacito de<br><span>Colombia</span><br>recién hecho para ti
           </h1>
           <p class="hero-subtitle">
-            Arepas artesanales hechas con maíz 100% natural.<br>
-            Congeladas frescas. Listas en 15 minutos. Pickup en Calgary.
+            Arepas artesanales de maíz, hechas con tradición familiar y el sabor que nos lleva a casa.
           </p>
           <div class="hero-ctas">
-            <a href="#productos" class="btn-primary">Ver Productos</a>
-            <a href="#contacto" class="btn-secondary">Contacto</a>
+            <a href="#productos" class="btn-primary">Ver nuestras arepas</a>
+            <a href="#nosotros" class="btn-secondary">Nuestra historia <span aria-hidden="true">↓</span></a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ── MARQUEE ── -->
-    <div id="marquee" aria-hidden="true">
+    <div id="marquee" aria-label="Beneficios de Arepaisano">
       <div class="marquee-track">
-        <span class="marquee-item highlight">Gluten Free</span>
+        <span class="marquee-item highlight">Hechas a mano</span>
         <span class="marquee-dot"></span>
-        <span class="marquee-item">Fat Free</span>
+        <span class="marquee-item">Maíz y tradición</span>
         <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">100% Natural Corn</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Tasty</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Corn Arepas</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Cheese Arepas</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Green Life</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Carrot Life</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Seeds Life</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Almond Life</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Mini Corn</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Colombian Tastiness</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Calgary, AB</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Artisan Made</span>
-        <span class="marquee-dot"></span>
-        <!-- Duplicate for seamless loop -->
-        <span class="marquee-item highlight">Gluten Free</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Fat Free</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">100% Natural Corn</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Tasty</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Corn Arepas</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Cheese Arepas</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Green Life</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Carrot Life</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Seeds Life</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Almond Life</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Mini Corn</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Colombian Tastiness</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Calgary, AB</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Artisan Made</span>
-        <span class="marquee-dot"></span>
+        <span class="marquee-item highlight">Pickup en Calgary</span>
       </div>
     </div>
+
+    <!-- ── BRAND MOMENTS ── -->
+    <section id="momentos" aria-labelledby="momentos-title">
+      <div class="momentos-intro">
+        <span class="section-label">Así se vive Arepaisano</span>
+        <h2 class="section-title" id="momentos-title">Maíz, manos y <span>tradición</span></h2>
+        <p>De la plancha a la mesa: la comida, el café y la comunidad que nos reúnen.</p>
+      </div>
+      <div class="moments-grid">
+        <article class="moment-card moment-card--kitchen">
+          <span class="moment-number">01</span>
+          <h3>En la cocina</h3>
+          <p>El sabor empieza con manos que conocen la tradición.</p>
+        </article>
+        <article class="moment-card moment-card--coffee">
+          <span class="moment-number">02</span>
+          <h3>Un café, una arepa</h3>
+          <p>Pequeños rituales que saben a Colombia.</p>
+        </article>
+        <article class="moment-card moment-card--events">
+          <span class="moment-number">03</span>
+          <h3>Momentos juntos</h3>
+          <p>Familia, amigos y comunidad alrededor de la mesa.</p>
+        </article>
+      </div>
+      <p class="moments-note">Próximamente: videos reales de la cocina y los momentos Arepaisano.</p>
+    </section>
 
     <!-- ── WHY US ── -->
     <section id="porque" aria-labelledby="porque-title">
@@ -160,17 +133,17 @@
         <div class="why-card">
           <span class="why-icon" aria-hidden="true">🌽</span>
           <div class="why-title">100% Maíz Natural</div>
-          <p class="why-text">Sin harinas añadidas. Sin conservantes artificiales. Solo maíz, agua y amor como en Colombia.</p>
+          <p class="why-text">Recetas colombianas con el cariño y la tradición de casa.</p>
         </div>
         <div class="why-card">
           <span class="why-icon" aria-hidden="true">❄️</span>
-          <div class="why-title">Ready to Eat</div>
-          <p class="why-text">¡Sabor auténtico en solo 5 minutos! Las congelamos recién hechas para que lleguen a tu mesa con todo el sabor intacto.</p>
+          <div class="why-title">Listas para disfrutar</div>
+          <p class="why-text">Congeladas para que tengas el sabor auténtico siempre a la mano.</p>
         </div>
         <div class="why-card">
           <span class="why-icon" aria-hidden="true">🚚</span>
           <div class="why-title">Pickup en Calgary</div>
-          <p class="why-text">Coordina tu pickup directamente por WhatsApp. Listo en 15 minutos. Lunes a Sábado · 8am–3pm.</p>
+          <p class="why-text">Coordina tu pickup directamente por WhatsApp. Lunes a sábado · 8am–3pm.</p>
         </div>
       </div>
     </section>
@@ -207,14 +180,14 @@
             Martha <span>Bejarano</span><br>y su sueño colombiano
           </h2>
           <p class="about-story">
-            Martha Bejarano llegó de Bogotá a Calgary hace casi 18 años. Fue una de las primeras personas en traer la arepa colombiana artesanal a esta ciudad — cuando nadie más la hacía. Lo que empezó con 5 paquetes en Unimarket se convirtió en una marca que hoy distribuye a tiendas latinas en Calgary y Edmonton.
+            Martha Bejarano llegó de Bogotá a Calgary hace más de 20 años. Fue una de las primeras personas en traer la arepa colombiana artesanal a esta ciudad, cuando nadie más la hacía. Lo que empezó con 5 paquetes en una de las tiendas latinas más populares se convirtió en una marca que hoy distribuye a tiendas latinas en Calgary, Airdrie, Red Deer y Edmonton.
           </p>
           <p class="about-story">
             Cada arepa la hace con maíz 100% natural, sin harinas añadidas, sin atajos. Porque para Martha, llevar el sabor de Colombia a la mesa de las familias no es un negocio — es una misión.
           </p>
           <div class="about-stats">
             <div class="stat">
-              <span class="stat-num">+10</span>
+              <span class="stat-num">+20</span>
               <span class="stat-label">Años en Calgary</span>
             </div>
             <div class="stat">
@@ -231,7 +204,7 @@
       <div class="section-header">
         <span class="section-label">La Tienda</span>
         <h2 class="section-title" id="productos-title">Nuestras <span>Arepas</span></h2>
-        <p class="section-sub">Selecciona tus favoritas y te contactamos por WhatsApp para coordinar la entrega</p>
+        <p class="section-sub">Selecciona tus favoritas y escríbenos por WhatsApp para coordinar tu pickup</p>
       </div>
       <div class="products-grid" id="productsGrid" aria-label="Productos disponibles">
         <!-- Rendered by js/products.js -->
@@ -330,7 +303,7 @@
         <div class="contact-info">
           <div class="contact-item">📍 4099 Ogden Rd SE, Calgary, AB T2G 4P9</div>
           <div class="contact-item">📱 <a href="tel:+14033975089">(403) 397-5089</a></div>
-          <div class="contact-item">✉️ <a href="mailto:arepaisanotraditionalfood@gmail.com">arepaisanotraditionalfood@gmail.com</a></div>
+          <div class="contact-item">✉️ <a href="mailto:info@arepaisano.ca">info@arepaisano.ca</a></div>
           <div class="contact-item">🕗 Lunes a Sábado · 8am – 3pm</div>
           <div class="contact-item">🇨🇴 Colombian Tastiness</div>
         </div>
@@ -344,7 +317,7 @@
     <div class="footer-brand">AREPAISANO</div>
     <div class="footer-copy">
       © 2026 Arepaisano by Martha Bejarano · Calgary, AB ·
-      <a href="mailto:arepaisanotraditionalfood@gmail.com">arepaisanotraditionalfood@gmail.com</a>
+      <a href="mailto:info@arepaisano.ca">info@arepaisano.ca</a>
     </div>
   </footer>
 

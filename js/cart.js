@@ -2,7 +2,22 @@
    AREPAISANO — Cart, Navigation & WhatsApp Order
    ============================================================ */
 
-let cart = {};
+const CART_STORAGE_KEY = 'arepaisano-cart';
+let cart = loadCart();
+let lastFocusedElement = null;
+
+function loadCart() {
+  try {
+    const savedCart = JSON.parse(localStorage.getItem(CART_STORAGE_KEY));
+    return savedCart && typeof savedCart === 'object' ? savedCart : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveCart() {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+}
 
 /* ── ADD TO CART ── */
 function addToCart(id) {
@@ -29,7 +44,9 @@ function updateQty(id, delta) {
 /* ── UPDATE CART COUNT BADGE ── */
 function updateCartUI() {
   const total = Object.values(cart).reduce((a, b) => a + b, 0);
-  document.getElementById('cartCount').textContent = total;
+  const cartCount = document.getElementById('cartCount');
+  if (cartCount) cartCount.textContent = total;
+  saveCart();
   renderCartItems();
 }
 
@@ -76,9 +93,25 @@ function renderCartItems() {
 function toggleCart() {
   const drawer = document.getElementById('cartDrawer');
   const overlay = document.getElementById('cartOverlay');
-  const isOpen = drawer.classList.toggle('open');
-  overlay.classList.toggle('open');
-  document.querySelector('.cart-btn').setAttribute('aria-expanded', isOpen);
+  const cartButton = document.querySelector('.cart-btn');
+  const isOpen = !drawer.classList.contains('open');
+
+  if (isOpen) {
+    lastFocusedElement = document.activeElement;
+  }
+
+  drawer.classList.toggle('open', isOpen);
+  drawer.setAttribute('aria-hidden', String(!isOpen));
+  overlay.classList.toggle('open', isOpen);
+  overlay.setAttribute('aria-hidden', String(!isOpen));
+  cartButton.setAttribute('aria-expanded', String(isOpen));
+  document.body.classList.toggle('cart-is-open', isOpen);
+
+  if (isOpen) {
+    drawer.querySelector('.cart-close').focus();
+  } else if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
 }
 
 /* ── SEND ORDER TO WHATSAPP ── */
@@ -105,16 +138,9 @@ function sendToWhatsApp() {
   window.open(`https://wa.me/14033975089?text=${encoded}`, '_blank');
 }
 
-/* ── HERO V1 / V2 TOGGLE ── */
-function switchHeroVariant() {
-  const hero = document.getElementById('hero');
-  const btn = document.getElementById('heroVariantBtn');
-  const isV2 = hero.classList.toggle('hero--v2');
-  btn.textContent = isV2 ? 'V1' : 'V2';
-}
-
 /* ── MOBILE HAMBURGER NAV ── */
 document.addEventListener('DOMContentLoaded', () => {
+  updateCartUI();
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -134,4 +160,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && document.getElementById('cartDrawer').classList.contains('open')) {
+      toggleCart();
+    }
+  });
 });
