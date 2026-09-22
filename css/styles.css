@@ -5,15 +5,17 @@
 
 /* ── CSS VARIABLES ── */
 :root {
-  --yellow: #E9B942;
-  --yellow-dark: #CC9826;
-  --red: #C65A2E;
-  --red-dark: #9C4020;
+  --yellow: #F3C62B;
+  --yellow-dark: #D6A80F;
+  --red: #CE1126;
+  --red-dark: #A60D1E;
+  --flag-blue: #003893;
+  --flag-blue-light: #1554B0;
   --blue: #2E1C12;
   --blue-light: #493024;
-  --turquoise: #64704B;
-  --turquoise-dark: #4C5937;
-  --turquoise-light: #83906B;
+  --turquoise: #003893;
+  --turquoise-dark: #002C70;
+  --turquoise-light: #1554B0;
   --cream: #F5E9D4;
   --brown: #2E1C12;
   --white: #FFF9EE;
@@ -73,13 +75,13 @@ nav {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  border-bottom: 2px solid rgba(0,48,135,0.07);
+  border-bottom: 2px solid rgba(0,56,147,0.16);
 }
 
 .nav-brand {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 900;
-  color: var(--blue);
+  color: var(--flag-blue);
   font-size: 1.5rem;
   letter-spacing: 2px;
   text-decoration: none;
@@ -102,7 +104,7 @@ nav {
   text-transform: uppercase;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--turquoise); }
+.nav-links a:hover { color: var(--red); }
 
 /* Hamburger toggle button */
 .nav-toggle {
@@ -121,7 +123,7 @@ nav {
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--blue);
+  background: var(--flag-blue);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -130,8 +132,8 @@ nav {
 .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .cart-btn {
-  background: var(--yellow);
-  color: var(--blue);
+  background: var(--red);
+  color: var(--white);
   border: none;
   padding: 8px 18px;
   border-radius: 50px;
@@ -146,11 +148,11 @@ nav {
   position: relative;
   flex-shrink: 0;
 }
-.cart-btn:hover { background: var(--yellow-dark); transform: scale(1.05); }
+.cart-btn:hover { background: var(--red-dark); transform: scale(1.05); }
 
 .cart-count {
-  background: var(--red);
-  color: white;
+  background: var(--yellow);
+  color: var(--blue);
   border-radius: 50%;
   width: 20px; height: 20px;
   display: flex; align-items: center; justify-content: center;
@@ -259,8 +261,8 @@ h1.hero-title span { color: var(--yellow); }
 }
 
 .btn-primary {
-  background: var(--yellow);
-  color: var(--blue);
+  background: var(--red);
+  color: var(--white);
   padding: 14px 32px;
   border-radius: 50px;
   font-weight: 900;
@@ -272,12 +274,12 @@ h1.hero-title span { color: var(--yellow); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 8px 24px rgba(252,209,22,0.4);
+  box-shadow: 0 8px 24px rgba(206,17,38,0.36);
 }
 .btn-primary:hover {
-  background: var(--yellow-dark);
+  background: var(--red-dark);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(252,209,22,0.5);
+  box-shadow: 0 12px 32px rgba(206,17,38,0.46);
 }
 
 .btn-secondary {
@@ -327,9 +329,9 @@ h1.hero-title span { color: var(--yellow); }
 #marquee {
   position: relative;
   z-index: 3;
-  background: var(--red);
+  background: var(--yellow);
   overflow: hidden;
-  border-top: 3px solid var(--yellow);
+  border-top: 3px solid var(--red);
   flex-shrink: 0;
 }
 
@@ -347,7 +349,7 @@ h1.hero-title span { color: var(--yellow); }
   align-items: center;
   gap: 10px;
   padding: 0 28px;
-  color: var(--white);
+  color: var(--blue);
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 0.82rem;
@@ -359,10 +361,10 @@ h1.hero-title span { color: var(--yellow); }
 .marquee-dot {
   width: 5px; height: 5px;
   border-radius: 50%;
-  background: var(--yellow);
+  background: var(--flag-blue);
   flex-shrink: 0;
 }
-.marquee-item.highlight { color: var(--yellow); }
+.marquee-item.highlight { color: var(--red); }
 
 /* ── PRODUCT VISUAL ── */
 .product-visual {
@@ -405,7 +407,7 @@ h2.section-title {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 900;
   font-size: clamp(2rem, 4vw, 3.2rem);
-  color: var(--blue);
+  color: var(--flag-blue);
   line-height: 1.1;
 }
 h2.section-title span { color: var(--red); }
@@ -531,7 +533,7 @@ h2.section-title span { color: var(--red); }
   font-family: 'Fraunces', serif;
   font-size: 1.15rem;
   font-weight: 900;
-  color: var(--blue);
+  color: var(--flag-blue);
   margin-bottom: 0.4rem;
 }
 
@@ -557,7 +559,7 @@ h2.section-title span { color: var(--red); }
 }
 
 .add-btn {
-  background: var(--blue);
+  background: var(--flag-blue);
   color: var(--white);
   border: none;
   padding: 10px 18px;
@@ -573,7 +575,7 @@ h2.section-title span { color: var(--red); }
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
-.add-btn:hover { background: var(--turquoise); transform: scale(1.04); }
+.add-btn:hover { background: var(--red); transform: scale(1.04); }
 .add-btn.added { background: #25D366; }
 
 /* ── ABOUT ── */
@@ -712,7 +714,7 @@ h2.about-title span { color: var(--red); }
   font-family: 'Fraunces', serif;
   font-size: 1.05rem;
   font-weight: 900;
-  color: var(--blue);
+  color: var(--flag-blue);
   margin-bottom: 0.55rem;
 }
 
@@ -777,7 +779,7 @@ h2.about-title span { color: var(--red); }
   font-family: 'Fraunces', serif;
   font-size: 1.05rem;
   font-weight: 900;
-  color: var(--blue);
+  color: var(--flag-blue);
   margin-bottom: 0.5rem;
 }
 
@@ -879,13 +881,13 @@ h2.about-title span { color: var(--red); }
 .testi-card:nth-child(2) .testi-avatar { background: var(--turquoise); color: white; }
 .testi-card:nth-child(3) .testi-avatar { background: var(--red); color: white; }
 
-.testi-name { font-weight: 800; font-size: 0.85rem; color: var(--blue); }
+.testi-name { font-weight: 800; font-size: 0.85rem; color: var(--flag-blue); }
 .testi-city { font-size: 0.72rem; color: rgba(74,44,10,0.45); font-weight: 600; }
 
 /* ── CONTACT ── */
 #contacto {
   padding: 5rem 5%;
-  background: var(--blue);
+  background: var(--flag-blue);
   text-align: center;
   position: relative;
   overflow: hidden;
