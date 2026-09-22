@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20260922-3">
 </head>
 <body>
 
@@ -34,7 +34,6 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#productos">Productos</a></li>
       <li><a href="#nosotros">Nuestra Historia</a></li>
-      <li><a href="#momentos">Momentos</a></li>
       <li><a href="#como">Cómo Ordenar</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -87,40 +86,33 @@
 
     <!-- ── MARQUEE ── -->
     <div id="marquee" aria-label="Beneficios de Arepaisano">
-      <div class="marquee-track">
-        <span class="marquee-item highlight">Hechas a mano</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item">Maíz y tradición</span>
-        <span class="marquee-dot"></span>
-        <span class="marquee-item highlight">Pickup en Calgary</span>
+      <div class="marquee-track" aria-hidden="true">
+        <div class="marquee-group">
+          <span class="marquee-item highlight">Hechas a mano</span>
+          <span class="marquee-dot"></span>
+          <span class="marquee-item">Maíz y tradición</span>
+          <span class="marquee-dot"></span>
+          <span class="marquee-item highlight">Pickup en Calgary</span>
+          <span class="marquee-dot"></span>
+          <span class="marquee-item">Sabor colombiano</span>
+          <span class="marquee-dot"></span>
+        </div>
+        <div class="marquee-group">
+          <span class="marquee-item highlight">Hechas a mano</span>
+          <span class="marquee-dot"></span>
+          <span class="marquee-item">Maíz y tradición</span>
+          <span class="marquee-dot"></span>
+          <span class="marquee-item highlight">Pickup en Calgary</span>
+          <span class="marquee-dot"></span>
+          <span class="marquee-item">Sabor colombiano</span>
+          <span class="marquee-dot"></span>
+        </div>
       </div>
     </div>
 
-    <!-- ── BRAND MOMENTS ── -->
-    <section id="momentos" aria-labelledby="momentos-title">
-      <div class="momentos-intro">
-        <span class="section-label">Así se vive Arepaisano</span>
-        <h2 class="section-title" id="momentos-title">Maíz, manos y <span>tradición</span></h2>
-        <p>De la plancha a la mesa: la comida, el café y la comunidad que nos reúnen.</p>
-      </div>
-      <div class="moments-grid">
-        <article class="moment-card moment-card--kitchen">
-          <span class="moment-number">01</span>
-          <h3>En la cocina</h3>
-          <p>El sabor empieza con manos que conocen la tradición.</p>
-        </article>
-        <article class="moment-card moment-card--coffee">
-          <span class="moment-number">02</span>
-          <h3>Un café, una arepa</h3>
-          <p>Pequeños rituales que saben a Colombia.</p>
-        </article>
-        <article class="moment-card moment-card--events">
-          <span class="moment-number">03</span>
-          <h3>Momentos juntos</h3>
-          <p>Familia, amigos y comunidad alrededor de la mesa.</p>
-        </article>
-      </div>
-      <p class="moments-note">Próximamente: videos reales de la cocina y los momentos Arepaisano.</p>
+    <!-- ── PRODUCT SHOWCASE ── -->
+    <section class="product-visual" aria-label="Productos Arepaisano">
+      <img src="https://res.cloudinary.com/dgio9uutc/image/upload/v1774936171/freepik_from-this-image-lets-remaster-this-for-a-studio-light-and-professional-looking-render-this-will-be-the-big-image-for-the-hero-of-my-website-so-make-it-look-good-and-only-the-items-no-back_0001_1_mw9p8w.png" alt="Variedades de arepas Arepaisano" width="1376" height="768" loading="lazy">
     </section>
 
     <!-- ── WHY US ── -->
@@ -147,11 +139,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ── BANNER TRANSITION ── -->
-    <div class="banner-transition" aria-hidden="true">
-      <img src="https://res.cloudinary.com/dgio9uutc/image/upload/v1775089250/Taste_a_bite_of_Colombia_here_1_rmdbic.png" alt="" width="1200" height="500" loading="lazy">
-    </div>
 
     <!-- ── ABOUT ── -->
     <section id="nosotros" aria-labelledby="nosotros-title">
@@ -348,7 +335,7 @@
   </aside>
 
   <!-- Scripts (deferred for performance) -->
-  <script src="js/products.js" defer></script>
-  <script src="js/cart.js" defer></script>
+  <script src="js/products.js?v=20260922-3" defer></script>
+  <script src="js/cart.js?v=20260922-3" defer></script>
 </body>
 </html>
