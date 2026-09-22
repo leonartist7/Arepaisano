@@ -31,6 +31,7 @@ body {
   color: var(--brown);
   overflow-x: hidden;
 }
+body.cart-is-open { overflow: hidden; }
 
 /* ── NOISE TEXTURE OVERLAY ── */
 body::before {
@@ -326,25 +327,27 @@ h1.hero-title span { color: var(--yellow); }
 #marquee {
   position: relative;
   z-index: 3;
-  background: var(--yellow);
+  background: var(--red);
   overflow: hidden;
-  border-top: 3px solid var(--red);
+  border-top: 3px solid var(--yellow);
   flex-shrink: 0;
 }
 
 .marquee-track {
   display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 13px 5%;
+  width: max-content;
+  animation: marqueeScroll 24s linear infinite;
+  padding: 13px 0;
 }
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-group { display: flex; align-items: center; flex-shrink: 0; }
 
 .marquee-item {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 0 28px;
-  color: var(--blue);
+  color: var(--white);
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 0.82rem;
@@ -356,66 +359,26 @@ h1.hero-title span { color: var(--yellow); }
 .marquee-dot {
   width: 5px; height: 5px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--yellow);
   flex-shrink: 0;
 }
-.marquee-item.highlight { color: var(--red-dark); }
+.marquee-item.highlight { color: var(--yellow); }
 
-/* ── BRAND MOMENTS ── */
-#momentos {
-  padding: 6rem 5%;
-  background: #2E1C12;
-  color: var(--white);
-}
-body.cart-is-open { overflow: hidden; }
-
-.momentos-intro {
-  max-width: 760px;
-  margin: 0 auto 2.75rem;
-  text-align: center;
-}
-.momentos-intro .section-label { color: var(--yellow); border-color: rgba(233,185,66,0.7); }
-.momentos-intro .section-title { color: var(--white); }
-.momentos-intro .section-title span { color: var(--yellow); }
-.momentos-intro p { color: rgba(255,249,238,0.74); font-size: 1.05rem; line-height: 1.65; margin-top: 0.9rem; }
-
-.moments-grid {
-  max-width: 1160px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.35fr 1fr 1fr;
-  gap: 1rem;
-}
-
-.moment-card {
-  min-height: 300px;
-  border-radius: 18px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+/* ── PRODUCT VISUAL ── */
+.product-visual {
+  background: #fff;
+  padding: clamp(1.25rem, 3vw, 2.5rem) 5% 0;
   overflow: hidden;
-  position: relative;
-  isolation: isolate;
-  background-color: #493024;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.22);
 }
-.moment-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(46,28,18,0.96) 2%, rgba(46,28,18,0.12) 78%);
-  z-index: -1;
+.product-visual img {
+  width: min(1240px, 100%);
+  height: clamp(250px, 29vw, 390px);
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center 72%;
+  border-radius: 18px 18px 0 0;
 }
-.moment-card--kitchen { background-image: url('../images/hero-arepaisano-v2.png'); background-position: 75% center; }
-.moment-card--coffee { background-image: url('https://res.cloudinary.com/dgio9uutc/image/upload/v1775005207/freepik_closeup-macro-photograph-of-a-freshly-made-arepa-steam-rising-gently-from-the-warm-arepa-cinematic-food-photography-dramatic-backlighting-ultrarealistic-no-text_0002_gagctf.png'); }
-.moment-card--events { background-image: url('https://res.cloudinary.com/dgio9uutc/image/upload/v1775092962/WhatsApp_Image_2026-03-09_at_20.54.15_t7wh16.jpg'); }
-.moment-number { color: var(--yellow); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.14em; margin-bottom: 0.65rem; }
-.moment-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.55rem; line-height: 1.1; margin-bottom: 0.55rem; }
-.moment-card p { color: rgba(255,249,238,0.84); line-height: 1.5; font-weight: 700; max-width: 30ch; }
-.moments-note { max-width: 1160px; margin: 1.15rem auto 0; color: rgba(255,249,238,0.58); font-size: 0.82rem; text-align: right; }
 
 /* ── SECTION SHARED ── */
 .section-header {
@@ -613,23 +576,6 @@ h2.section-title span { color: var(--red); }
 .add-btn:hover { background: var(--turquoise); transform: scale(1.04); }
 .add-btn.added { background: #25D366; }
 
-/* ── BANNER TRANSITION ── */
-.banner-transition {
-  width: 100%;
-  line-height: 0;
-  font-size: 0;
-  position: relative;
-  z-index: 2;
-  margin-top: 40px;
-  margin-bottom: -5rem;
-}
-.banner-transition img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transform: translateY(40px);
-}
-
 /* ── ABOUT ── */
 #nosotros {
   padding: 8.5rem 5% 6rem;
@@ -730,48 +676,48 @@ h2.about-title span { color: var(--red); }
 
 /* ── WHY ── */
 #porque {
-  padding: 2.5rem 5% 0.5rem;
+  padding: 3.75rem 5% 4.5rem;
   background: var(--white);
   position: relative;
   z-index: 1;
 }
-#porque .section-header { margin-bottom: 0.5rem; }
-#porque .section-title { font-size: 1.5rem; }
+#porque .section-header { margin-bottom: 2rem; }
+#porque .section-title { font-size: clamp(2rem, 4vw, 3rem); }
 
 .why-grid {
-  max-width: 1000px;
-  margin: 0.5rem auto 0;
+  max-width: 1060px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.85rem;
+  gap: 1.25rem;
 }
 
 .why-card {
   text-align: center;
-  padding: 0.75rem 0.9rem;
-  border-radius: 14px;
-  border: 2px solid rgba(0,48,135,0.08);
+  padding: 1.6rem 1.35rem;
+  border-radius: 18px;
+  border: 1px solid rgba(46,28,18,0.1);
   transition: all 0.3s;
-  background: var(--cream);
+  background: #FFF9EE;
 }
 .why-card:hover {
   border-color: var(--yellow);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(252,209,22,0.2);
+  box-shadow: 0 12px 28px rgba(46,28,18,0.12);
 }
 
-.why-icon { font-size: 2rem; margin-bottom: 0.4rem; display: block; }
+.why-icon { font-size: 2.35rem; margin-bottom: 0.65rem; display: block; }
 
 .why-title {
   font-family: 'Fraunces', serif;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 900;
   color: var(--blue);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.55rem;
 }
 
 .why-text {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   color: rgba(74,44,10,0.65);
   line-height: 1.5;
   font-weight: 600;
@@ -1222,8 +1168,6 @@ footer {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-card:nth-child(2) { margin-top: 0; }
-  .moments-grid { grid-template-columns: repeat(2, 1fr); }
-  .moment-card--kitchen { grid-column: span 2; }
 
   .steps-grid {
     grid-template-columns: 1fr;
@@ -1260,10 +1204,8 @@ footer {
 
   .testi-grid { grid-template-columns: 1fr; }
   .testi-card:nth-child(2) { margin-top: 0; }
-  #momentos { padding: 4.5rem 5%; }
-  .moments-grid { grid-template-columns: 1fr; }
-  .moment-card, .moment-card--kitchen { grid-column: auto; min-height: 250px; }
-  .moments-note { text-align: left; }
+  .product-visual { padding: 1rem 0 0; }
+  .product-visual img { height: 245px; border-radius: 0; object-position: center 74%; }
 
   footer { flex-direction: column; text-align: center; align-items: center; }
 }
